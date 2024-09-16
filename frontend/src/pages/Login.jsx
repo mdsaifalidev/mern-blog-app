@@ -34,7 +34,7 @@ const Login = () => {
 
   const handleLoginWithGoogle = (e) => {
     e.preventDefault();
-    window.open("http://localhost:8080/api/v1/auth/google", "_self");
+    window.open("https://mern-blog-app-0fes.onrender.com/api/v1/auth/google", "_self");
   };
 
   return (
