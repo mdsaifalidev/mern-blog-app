@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8080";
+const URL = "https://mern-blog-app-0fes.onrender.com";
 
 const axiosInstance = axios.create({
   baseURL: URL,
