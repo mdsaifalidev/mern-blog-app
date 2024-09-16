@@ -59,7 +59,7 @@ passport.use(
   )
 );
 
-const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = process.env;
+const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, CORS_ORIGIN } = process.env;
 
 // Google Strategy
 passport.use(
@@ -67,7 +67,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "/api/v1/auth/google/callback",
+      callbackURL: `${CORS_ORIGIN}/api/v1/auth/google/callback`,
     },
     async (accessToken, refreshToken, profile, done) => {
       try {
