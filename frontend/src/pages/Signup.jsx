@@ -7,7 +7,7 @@ import { toast } from "react-hot-toast";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const { setUser } = useAuth();
+  const { user, setUser } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const {
     register,
@@ -36,6 +36,10 @@ const Signup = () => {
     e.preventDefault();
     window.open("https://mern-blog-app-0fes.onrender.com/api/v1/auth/google", "_self");
   };
+
+   if(user){
+    return navigate("/", { replace: true });
+  }
 
   return (
     <div className="flex h-screen items-center flex-1 flex-col justify-center px-6 py-12 lg:px-8">
