@@ -22,8 +22,8 @@ const App = () => {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/my-blogs" element={<MyBlog />} />
-        <Route path="/create-blog" element={<CreateBlog />} />
+        <Route path="/my-blogs" element={<Protected><MyBlog /></Protected>} />
+        <Route path="/create-blog" element={<Protected><CreateBlog /></Protected>} />
         <Route
           path="/admin-dashboard"
           element={
