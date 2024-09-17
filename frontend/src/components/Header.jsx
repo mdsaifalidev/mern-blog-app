@@ -5,7 +5,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 const Header = () => {
-  const { user } = useAuth();
+  const { user, setUser } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -14,6 +14,7 @@ const Header = () => {
     const toastId = toast.loading("Please Wait...");
     try {
       const response = await axiosInstance.post("/api/v1/auth/logout");
+      setUser(null);
       toast.success(response.data.message, { id: toastId });
       navigate("/login", { replace: true });
     } catch (error) {
