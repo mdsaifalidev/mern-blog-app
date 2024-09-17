@@ -13,7 +13,7 @@ const ProtectedAdmin = ({ children }) => {
     return children;
   }
 
-  return <Navigate to="/login" replace={true} />;
+  return <Navigate to="/" replace={true} />;
 };
 
 export default ProtectedAdmin;
