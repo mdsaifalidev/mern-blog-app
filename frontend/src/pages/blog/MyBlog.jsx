@@ -47,13 +47,17 @@ const MyBlog = () => {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                       {blog.content}
                     </p>
-                    <div className="inline-flex items-center rounded-md bg-blue-50 px-2 py-2 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                      Status: {blog.status}
-                    </div>
-                    {blog.comment && (
-                      <div className="inline-flex mt-2 items-center rounded-md bg-blue-50 px-2 py-2 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
-                        Comment: {blog.comment}
-                      </div>
+                    {blog.status === "rejected" && (
+                      <>
+                        <div className="inline-flex items-center rounded-md bg-blue-50 px-2 py-2 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                          Status: {blog.status}
+                        </div>
+                        {blog.comment && (
+                          <div className="inline-flex mt-2 items-center rounded-md bg-blue-50 px-2 py-2 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10">
+                            Comment: {blog.comment}
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
